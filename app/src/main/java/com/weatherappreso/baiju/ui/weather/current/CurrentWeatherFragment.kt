@@ -1,25 +1,16 @@
 package com.weatherappreso.baiju.ui.weather.current
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-
+import androidx.lifecycle.ViewModelProviders
 import com.weatherappreso.baiju.R
-import com.weatherappreso.baiju.data.network.ConnectivityInterceptorImpl
-import com.weatherappreso.baiju.data.network.WeatherNetworkDataSource
-import com.weatherappreso.baiju.data.network.WeatherNetworkDataSourceImpl
-import com.weatherappreso.baiju.data.network.WeatherstackAPIService
 import com.weatherappreso.baiju.internal.glide.GlideApp
 import com.weatherappreso.baiju.ui.base.ScopedFragment
 import kotlinx.android.synthetic.main.current_weather_fragment.*
-import kotlinx.android.synthetic.main.current_weather_fragment.view.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
