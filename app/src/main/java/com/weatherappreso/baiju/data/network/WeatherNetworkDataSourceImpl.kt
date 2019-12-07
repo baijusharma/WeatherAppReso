@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.weatherappreso.baiju.data.network.response.CurrentWeatherResponse
 import com.weatherappreso.baiju.internal.NoConnectivityException
 
+// class file with interface method implemented
 class WeatherNetworkDataSourceImpl(val weatherstackAPIService: WeatherstackAPIService) :
     WeatherNetworkDataSource {
 
@@ -18,7 +19,7 @@ class WeatherNetworkDataSourceImpl(val weatherstackAPIService: WeatherstackAPISe
         try {
             val fetchedCurrentWeather = weatherstackAPIService
                 .getCurrentWeather(location)
-                .await()
+                .await() // .await(), will Waits for the Coroutine to finish and return the result
             _downloadedCurrentWeather.postValue(fetchedCurrentWeather)
 
         } catch (e: NoConnectivityException) {

@@ -22,7 +22,7 @@ interface WeatherstackAPIService {
     fun getCurrentWeather(
         @Query("query") location: String
         //  @Query("language") languageCode: String = " en "
-    ): Deferred<CurrentWeatherResponse>
+    ): Deferred<CurrentWeatherResponse> //Deferred is a Job that return a result
 
     // Static method access
     companion object {

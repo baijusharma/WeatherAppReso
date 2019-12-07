@@ -16,8 +16,8 @@ abstract class ForecastDatabase : RoomDatabase() {
     abstract fun currentWeatherDao(): CurrentWeatherDao
 
     companion object {
-        @Volatile //
-        private var instance: ForecastDatabase? = null //intailize with null
+        @Volatile //// Volatile means, this variable is easily available to all the other threads
+        private var instance: ForecastDatabase? = null //initialise with null
 
         private val LOCK = Any() // dummy obj
 

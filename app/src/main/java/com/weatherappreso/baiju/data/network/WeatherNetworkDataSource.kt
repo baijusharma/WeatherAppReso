@@ -1,7 +1,6 @@
 package com.weatherappreso.baiju.data.network
 
 import androidx.lifecycle.LiveData
-import com.weatherappreso.baiju.data.db.entity.CurrentWeatherEntry
 import com.weatherappreso.baiju.data.network.response.CurrentWeatherResponse
 
 interface WeatherNetworkDataSource {

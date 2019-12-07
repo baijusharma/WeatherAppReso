@@ -21,13 +21,13 @@ data class CurrentWeatherEntry(
     val temperature: Double,
     @SerializedName("uv_index") // real name
     val uvIndex: Int,
-    val visibility: Int,
+    val visibility: Double,
     @SerializedName("weather_code")
     val weatherCode: Double,
     @SerializedName("wind_dir")
     val windDir: String,
     @SerializedName("wind_speed")
-    val windSpeed: Int
+    val windSpeed: Double
 ) {
 
     @PrimaryKey(autoGenerate = false)
