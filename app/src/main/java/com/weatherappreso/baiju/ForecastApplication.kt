@@ -21,14 +21,16 @@ class ForecastApplication : Application(), KodeinAware {
 
     override val kodein = Kodein.lazy {
         import(androidXModule(this@ForecastApplication))
-
+        //from singleton is used for general passing of class object
         bind() from singleton { ForecastDatabase(instance()) }
         bind() from singleton { instance<ForecastDatabase>().currentWeatherDao() }
+        //with singleton is used for interface Implementation
         bind<ConnectivityInterceptor>() with singleton { ConnectivityInterceptorImpl(instance()) }
         bind() from singleton { WeatherstackAPIService(instance()) }
         bind<WeatherNetworkDataSource>() with singleton { WeatherNetworkDataSourceImpl(instance()) }
         bind<ForecastRepository>() with singleton { ForecastRepositoryImpl(instance(), instance()) }
         bind<UnitProvider>() with singleton { UnitProviderImpl(instance()) }
+        //from provider is used for ViewModelFactory
         bind() from provider { CurrentWeatherViewModelFactory(instance(), instance()) }
     }
 

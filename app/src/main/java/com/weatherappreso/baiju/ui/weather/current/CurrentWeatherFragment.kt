@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.weatherappreso.baiju.R
 import com.weatherappreso.baiju.internal.glide.GlideApp
 import com.weatherappreso.baiju.ui.base.ScopedFragment
 import kotlinx.android.synthetic.main.current_weather_fragment.*
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
@@ -33,7 +35,7 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel =
-            ViewModelProviders.of(this, viewModelFactory).get(CurrentWeatherViewModel::class.java)
+            ViewModelProvider(this, viewModelFactory).get(CurrentWeatherViewModel::class.java)
         // Use the ViewModel
         bindUI()
 

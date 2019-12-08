@@ -7,7 +7,7 @@ import com.weatherappreso.baiju.data.db.entity.Location
 
 data class CurrentWeatherResponse(
 
-    @SerializedName("current") //real name
+    @SerializedName("current") //original name
     val currentWeatherEntry: CurrentWeatherEntry,
     val location: Location,
     val request: Request
